@@ -1,5 +1,9 @@
 This repo demonstrates how to use [malli](https://github.com/metosin/malli) schemas to validate forms with [react-hook-form](https://react-hook-form.com/get-started)
 
+You can see the running example on github pages:
+
+[dvingo.github.io/malli-react-hook-form](https://dvingo.github.io/malli-react-hook-form/)
+
 
 To integrate in your own codebase the main point of integration is a malli validation helper
 to output errors in the shape used by react-hook-form:
