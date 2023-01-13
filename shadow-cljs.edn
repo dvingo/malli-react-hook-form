@@ -1,0 +1,8 @@
+{:deps true
+ :dev-http {4023 "public"}
+ :builds
+ {:main
+  {:target     :browser
+   :output-dir "public/js/main"
+   :asset-path "js/main"
+   :modules    {:main {:init-fn app.malli-react-hook-form.entry/init}}}}}

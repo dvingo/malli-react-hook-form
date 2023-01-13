@@ -1,0 +1,7 @@
+{:paths ["src"]
+ :deps  {cljs-bean/cljs-bean        {:mvn/version "1.9.0"}
+         lilactown/helix            {:mvn/version "0.1.9"}
+         metosin/malli              {:mvn/version "0.10.0"}
+         applied-science/js-interop {:mvn/version "0.3.3"}
+         thheller/shadow-cljs       {:mvn/version "2.20.19"}
+         binaryage/devtools         {:mvn/version "1.0.6"}}}

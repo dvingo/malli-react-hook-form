@@ -1,0 +1,12 @@
+node_modules
+.idea
+.cpcache
+.shadow-cljs
+.nrepl-port
+public/js/*
+!public/index.html
+package-lock.json
+.clj-kondo/.cache
+fe-bundle-report.html
+.lsp
+*.iml
