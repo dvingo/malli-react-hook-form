@@ -1,5 +1,33 @@
 This repo demonstrates how to use [malli](https://github.com/metosin/malli) schemas to validate forms with [react-hook-form](https://react-hook-form.com/get-started)
 
+
+To integrate in your own codebase the main point of integration is a malli validation helper
+to output errors in the shape used by react-hook-form:
+
+```clojure
+(defn use-malli-resolver [schema]
+  (let [validator (m/validator schema)
+        explain   (m/explainer schema)]
+    (hooks/use-callback [schema]
+      (fn [data-js]
+        (let [data   (js->clj data-js :keywordize-keys true)
+              valid? (validator data)]
+          (if valid?
+            #js{:values data :errors #js{}}
+            (let [errs (reduce-kv
+                         (fn [errs field messages]
+                           (doto errs
+                             (g/set (name field) #js{:type "validation" :message (first messages)})))
+                         #js{}
+                         (me/humanize (explain data)))]
+              #js{:values #js{} :errors errs})))))))
+
+;; then in your render function use this "resolver":
+
+(let [resolver      (use-malli-resolver form-schema)
+      form-methods  (useForm #js{:resolver resolver})
+```
+
 # Running locally
 
 prerequisites:
