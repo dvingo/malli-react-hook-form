@@ -68,7 +68,7 @@
                                  (.preventDefault e)
                                  (.reset form-methods))} "Reset"))))))
 
-(defonce root (react-dom/createRoot js/app))
+(defonce root (react-dom/createRoot (js/document.getElementById "app")))
 
 (defn ^:export init []
   (println "INIT!")
