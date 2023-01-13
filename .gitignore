@@ -3,8 +3,9 @@ node_modules
 .cpcache
 .shadow-cljs
 .nrepl-port
-public/js/*
-!public/index.html
+public/js/main/cljs-runtime
+public/js/main/manifest.edn
+#!public/index.html
 package-lock.json
 .clj-kondo/.cache
 fe-bundle-report.html
